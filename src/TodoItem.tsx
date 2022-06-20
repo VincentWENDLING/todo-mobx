@@ -1,9 +1,10 @@
 import { useState } from "react"
 
+import store from "./store"
 
 const TodoItem = (props: any) => {
 
-    const { name, done } = props.todo
+    const { id, name, done } = props.todo
 
     const [checked, setChecked] = useState(false) 
 
@@ -11,7 +12,7 @@ const TodoItem = (props: any) => {
         <div className="flex">
             <p className={`${checked?'':'line-through'}`}>{ name } </p>
             <input type="checkbox" onChange={()=>{setChecked(!checked)}}/>
-            <button>Del</button>
+            <button onClick={()=>store.deleteTodo(id)}>Del</button>
         </div>
     )
 
