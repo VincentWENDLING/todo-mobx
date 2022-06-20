@@ -37,6 +37,17 @@ class Store {
         })
     }
 
+
+    checkTodo(id: number, checked: boolean) {
+
+        this.todos.forEach(todo=>{
+            if (todo.id === id) {
+                todo.done = checked
+            }
+        })
+
+    }
+
 }
 
 const store = new Store
