@@ -4,6 +4,8 @@ import { observer } from 'mobx-react'
 
 import store from "./store"
 
+import './App.css'
+
 function App() {
 
   const TodosList = store.todos.map((todo, index)=>
@@ -11,14 +13,16 @@ function App() {
   )
 
   return (
-    <div className="w-8/12 bg-black">
-      <div className="flex justify-center items-center">
-        <input type="text" placeholder="New Todo" onChange={event=>(store.newTodo = event.target.value)}/>
-        <button onClick={()=>store.addTodo(store.newTodo)}>Add Todo</button>
+    <div className="App">
+      <div className="main-content">
+        <div className="add-todo">
+          <input type="text" placeholder="New Todo" onChange={event=>(store.newTodo = event.target.value)}/>
+          <button onClick={()=>store.addTodo(store.newTodo)}>Add Todo</button>
+        </div>
+        <ol className="todo-list">
+          { TodosList }
+        </ol>
       </div>
-      <ol>
-        { TodosList }
-      </ol>
     </div>
   )
 }

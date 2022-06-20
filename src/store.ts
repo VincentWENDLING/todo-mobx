@@ -17,6 +17,10 @@ class Store {
     }
 
     addTodo(name: string) {
+        if (name==="") {
+            return;
+        }
+        
         this.todos.push({
             id: this.lastId,
             name: name,
