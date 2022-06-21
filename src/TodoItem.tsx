@@ -2,7 +2,7 @@ import { useState } from "react"
 
 import store from "./store"
 
-import './TodoItem.css' 
+//import './TodoItem.css' 
 
 const TodoItem = (props: any) => {
 

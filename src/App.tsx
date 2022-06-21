@@ -4,7 +4,7 @@ import { observer } from 'mobx-react'
 
 import store from "./store"
 
-import './App.css'
+//import './App.css'
 
 function App() {
 
@@ -13,11 +13,11 @@ function App() {
   )
 
   return (
-    <div className="App">
+    <div className="App bg-black">
       <div className="main-content">
-        <div className="add-todo">
+        <div className="add-todo flex gap-2">
           <input type="text" placeholder="New Todo" onChange={event=>(store.newTodo = event.target.value)}/>
-          <button onClick={()=>store.addTodo(store.newTodo)}>Add Todo</button>
+          <button className="bg-red-500" onClick={()=>store.addTodo(store.newTodo)}>Add Todo</button>
         </div>
         <ol className="todo-list">
           { TodosList }
